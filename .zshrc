@@ -13,6 +13,6 @@ else
   setopt HIST_EXPIRE_DUPS_FIRST
 fi
 
-source .zaliases                    # Load aliases
-source .zpath         2> /dev/null  # Update $PATH
-source .zlocal_config 2> /dev/null  # Optional (unversioned) config
+source ~/.zaliases                    # Load aliases
+source ~/.zpath         2> /dev/null  # Update $PATH
+source ~/.zlocal_config 2> /dev/null  # Optional (unversioned) config
