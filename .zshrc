@@ -1,6 +1,7 @@
 # Preferences
-export CLICOLOR=1
 setopt NO_BEEP # Disable Beep
+export CLICOLOR=1
+export VISUAL=nvim
 
 # Autocomplete
 if command -v fzf 2>&1 >/dev/null; then
