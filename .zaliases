@@ -6,3 +6,5 @@ alias l='ls -CF'
 
 rude=$(echo gurshpx | tr "[a-z]" "[n-za-m]")
 eval $($rude --alias)
+eval $($rude --alias oops)
+
