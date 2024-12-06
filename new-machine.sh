@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Command dependencies
-apps="stow go fzf"
+apps="stow go fzf tealdeer"
 
 if command -v brew 2>&1 >/dev/null; then
   brew install $apps

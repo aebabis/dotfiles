@@ -3,7 +3,10 @@ setopt NO_BEEP # Disable Beep
 export CLICOLOR=1
 export VISUAL=nvim
 
-# Autocomplete
+# Command Autocomplete
+autoload -Uz compinit && compinit
+
+# History Autocomplete
 if command -v fzf 2>&1 >/dev/null; then
   source <(fzf --zsh)
 else
