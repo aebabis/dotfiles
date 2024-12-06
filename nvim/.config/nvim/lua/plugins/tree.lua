@@ -7,6 +7,9 @@ return {
   },
   config = function()
     require('nvim-tree').setup({
+      renderer = {
+        group_empty = true,
+      },
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
 
