@@ -1,3 +1,16 @@
+" SETTINGS
+let g:mapleader=' '
+let g:maplocalleader='\\'
+
+set expandtab   " tabs to spaces
+set tabstop=2
+set shiftwidth=2
+
+set splitright  " splits appear to the right
+set splitbelow  " or below
+
+
+" KEYMAPPINGS
 " Fast window switching
 nmap <C-h>  <C-w>h
 nmap <C-j>  <C-w>j
@@ -13,4 +26,7 @@ tmap <silent> <C-l>  <ESC><C-w>l
 " Fast window spliting
 nnoremap <silent> <C-v>  :vnew<CR>
 nnoremap <silent> <C-d>  :new<CR>
+
+" ADDITIONAL FILETYPE RECOGNITION
+au BufReadPost *.tmux.conf set syntax=tmux
 

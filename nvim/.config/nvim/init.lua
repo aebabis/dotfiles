@@ -1,6 +1,5 @@
 -- Load settings first so LazyVim has
 -- correct `mapleader` and `maplocalleader`
-require('config.settings')
 require('config.lazy')
 require('config.mappings')
 
