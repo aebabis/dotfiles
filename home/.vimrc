@@ -2,6 +2,9 @@
 let g:mapleader=' '
 let g:maplocalleader='\\'
 
+set number
+set relativenumber
+
 set expandtab   " tabs to spaces
 set tabstop=2
 set shiftwidth=2
