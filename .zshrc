@@ -21,6 +21,7 @@ fi
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-source ~/.zaliases                    # Load aliases
-source ~/.zpath         2> /dev/null  # Update $PATH
-source ~/.zlocal_config 2> /dev/null  # Optional (unversioned) config
+source ~/.zaliases                  # Load aliases
+source ~/.zpath       2> /dev/null  # Update $PATH
+source ~/.zlocal      2> /dev/null  # Optional (unversioned) config
+
