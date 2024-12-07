@@ -1,7 +1,7 @@
 #/!bin/sh
 
 # ROOT (HOME) DOTFILES
-stow --ignore='./*' . -t ~
+stow --ignore='$(pwd)/*' . -t ~
 
 # MODULES (CONFIG DOTFILES)
 mkdir -p .config
