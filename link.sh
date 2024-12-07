@@ -1,9 +1,9 @@
 #/!bin/sh
 
 # ROOT (HOME) DOTFILES
-stow --ignore='$(pwd)/*' . -t ~
+stow home -t ~
 
-# MODULES (CONFIG DOTFILES)
+# MODULE (CONFIG) DOTFILES
 mkdir -p .config
 stow nvim -t ~
 stow tmux -t ~
