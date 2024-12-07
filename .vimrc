@@ -24,8 +24,8 @@ tmap <silent> <C-k>  <ESC><C-w>k
 tmap <silent> <C-l>  <ESC><C-w>l
 
 " Fast window spliting
-nnoremap <silent> <C-v>  :vnew<CR>
-nnoremap <silent> <C-d>  :new<CR>
+nmap <silent> <C-v>  :vnew<CR>
+nmap <silent> <C-d>  :new<CR>
 
 " ADDITIONAL FILETYPE RECOGNITION
 au BufReadPost *.tmux.conf set syntax=tmux
