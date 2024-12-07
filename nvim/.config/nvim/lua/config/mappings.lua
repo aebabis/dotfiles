@@ -1,5 +1,3 @@
-vim.cmd('source ~/.vimrc');
-
 local make_window = function(options)
   local handle = vim.api.nvim_open_win(0, false, options)
   vim.api.nvim_set_current_win(handle)
