@@ -8,6 +8,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias vim='nvim'
+
 rude=$(echo gurshpx | tr "[a-z]" "[n-za-m]")
 eval $($rude --alias)
 eval $($rude --alias oops)
