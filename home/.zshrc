@@ -3,12 +3,12 @@ setopt NO_BEEP # Disable Beep
 export CLICOLOR=1
 export VISUAL=nvim
 
+autoload -U colors && colors
+autoload -Uz compinit && compinit   # Command Autocomplete
+
 # Prompt
 setopt PROMPT_SUBST
 PROMPT='%F{243}%~%f %f%F{249}%%%f '
-
-# Command Autocomplete
-autoload -Uz compinit && compinit
 
 # History Autocomplete
 if command -v fzf 2>&1 >/dev/null; then
