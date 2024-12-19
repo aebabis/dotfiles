@@ -14,6 +14,10 @@ set splitbelow  " or below
 
 
 " KEYMAPPINGS
+" Swap e and y for scrolling
+nnoremap <C-y>  <C-e>
+nnoremap <C-e>  <C-y>
+
 " Fast window switching
 nmap <C-h>  <C-w>h
 nmap <C-j>  <C-w>j
