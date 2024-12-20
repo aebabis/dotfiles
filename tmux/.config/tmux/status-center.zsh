@@ -23,7 +23,10 @@ function right-width () {
 
 function center-text () {
   max=$1
-  text="$(git rev-parse --abbrev-ref --symbolic-full-name @{u})"
+  text=" $(
+    git rev-parse --abbrev-ref --symbolic-full-name @{u} ||
+    git rev-parse --abbrev-ref HEAD
+  )"
   size=$(echo $text | wc -m)
   if [[ $size -gt $max ]]; then
     trunc=$(($max - 1))
