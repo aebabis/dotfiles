@@ -43,10 +43,10 @@ if [[ $availableSpace -ge 3 ]]; then
 
   preferredLocation=$((($totalWidth - $centerSize) / 2))
 
-  if [[ $preferredLocation -lt $leftSize ]]; then
-    echo "#[align=centre] $centerText "
-  else
+  if [[ $preferredLocation -ge $leftSize ]]; then
     echo "#[align=absolute-centre] $centerText "
+  else
+    echo "#[align=centre]$(printf "%-${availableSpace}s" " $centerText ")"
   fi
 fi
 
