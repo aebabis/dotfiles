@@ -13,9 +13,10 @@ seconds=$(($now - $EPOCH))
 days=$(echo "$seconds/3600/24+$OFFSET" | bc -l)
 phase=$((fmod($days, $MONTH)))
 index=$(printf "%d" $(($phase*28/$MONTH)))
-icon=$(echo $PHASES | cut -c$((index+1)))
+
 if [[ "$1" == "--index" ]]; then
   echo $index
 else
+  icon=${PHASES:$((index+1)):1}
   echo $icon
 fi
