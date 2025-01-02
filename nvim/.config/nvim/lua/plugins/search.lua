@@ -6,11 +6,17 @@ local getConfig = function()
       actions = {
         -- this action toggles between 'grep' and 'live_grep'
         ["ctrl-g"] = { actions.grep_lgrep },
-        -- uncomment to enable '.gitignore' toggle for grep
+        -- Toggles use of .gitignore to filter out results
         ["ctrl-r"] = { actions.toggle_ignore },
-        -- uncomment to enable '.gitignore' toggle for grep
-        ["ctrl-h"] = { actions.toggle_hidden }
-      }
+        -- Toggles visibility of hidden files
+        ["ctrl-s"] = { actions.toggle_hidden }
+      },
+      winopts = {
+        on_create = function()
+          vim.keymap.set('t', '<C-j>', '<Down>', { silent = true, buffer = true });
+          vim.keymap.set('t', '<C-k>', '<Up>',   { silent = true, buffer = true });
+        end,
+      },
     }
   }
   if vim.fn.executable('fd') ~= 1 then
