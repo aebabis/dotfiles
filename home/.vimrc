@@ -12,6 +12,7 @@ set shiftwidth=2
 set splitright  " splits appear to the right
 set splitbelow  " or below
 
+set autoread    " auto-reload externally modified files
 
 " KEYMAPPINGS
 " Swap e and y for scrolling
