@@ -6,6 +6,13 @@ export VISUAL=nvim
 autoload -U colors && colors
 autoload -Uz compinit && compinit   # Command Autocomplete
 
+# vi mode
+bindkey -v
+bindkey -M viins '^P' up-line-or-history
+bindkey -M viins '^N' down-line-or-history
+bindkey -M vicmd '^P' up-line-or-history
+bindkey -M vicmd '^N' down-line-or-history
+
 # Prompt
 setopt PROMPT_SUBST
 PROMPT='%F{243}%~%f %f%F{249}%%%f '
