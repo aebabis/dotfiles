@@ -6,6 +6,9 @@ export VISUAL=nvim
 autoload -U colors && colors
 autoload -Uz compinit && compinit   # Command Autocomplete
 
+# map Caps Lock to Ctrl
+setxkbmap -option ctrl:nocaps || true
+
 # vi mode
 bindkey -v
 bindkey -M viins '^P' up-line-or-history
