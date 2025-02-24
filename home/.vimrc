@@ -8,9 +8,11 @@ set relativenumber
 set expandtab   " tabs to spaces
 set tabstop=2
 set shiftwidth=2
+set conceallevel=2
 
-set splitright  " splits appear to the right
-set splitbelow  " or below
+set splitright     " splits appear to the right
+set splitbelow     " or below
+set noequalalways  " prevent auto-resizing of splits
 
 set autoread    " auto-reload externally modified files
 
