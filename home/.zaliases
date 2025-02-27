@@ -11,6 +11,8 @@ alias l='ls -CF'
 alias vim='nvim'
 
 rude=$(echo gurshpx | tr "[a-z]" "[n-za-m]")
+RUDE=$(echo $rude | tr "[a-z]" "[A-Z]")
 eval $($rude --alias)
 eval $($rude --alias oops)
+eval "export ${RUDE}_REQUIRE_CONFIRMATION='false'"
 
