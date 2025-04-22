@@ -7,7 +7,9 @@ autoload -U colors && colors
 autoload -Uz compinit && compinit   # Command Autocomplete
 
 # map Caps Lock to Ctrl
-setxkbmap -option ctrl:nocaps || true
+if [[ -v DISPLAY ]]; then
+  setxkbmap -option ctrl:nocaps || true
+fi
 
 # vi mode
 bindkey -v
