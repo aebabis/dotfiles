@@ -1,5 +1,10 @@
 return {
   {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+  {
     -- LSP Server Management Application
     'williamboman/mason.nvim',
     lazy = false,
@@ -55,6 +60,9 @@ return {
       )
       masonConfig.setup({
         ensure_installed = { 'ts_ls', 'eslint', 'lua_ls', 'yamlls', 'jsonls' },
+        automatic_enable = {
+          exclude = { 'ts_ls', 'eslint' },
+        },
         automatic_installation = true,
         handlers = {
           function(server_name)
