@@ -11,13 +11,13 @@ local getConfig = function()
         -- Toggles visibility of hidden files
         ["ctrl-s"] = { actions.toggle_hidden }
       },
-      winopts = {
-        on_create = function()
-          vim.keymap.set('t', '<C-j>', '<Down>', { silent = true, buffer = true });
-          vim.keymap.set('t', '<C-k>', '<Up>',   { silent = true, buffer = true });
-        end,
-      },
-    }
+    },
+    winopts = {
+      on_create = function()
+        vim.keymap.set('t', '<C-j>', '<Down>', { silent = true, buffer = true });
+        vim.keymap.set('t', '<C-k>', '<Up>',   { silent = true, buffer = true });
+      end,
+    },
   }
   if vim.fn.executable('fd') ~= 1 then
     config.files = { cmd = 'find -f .' }
