@@ -1,12 +1,13 @@
 #/!bin/sh
+dir=$(dirname "$0")
 
 # ROOT (HOME) DOTFILES
-stow home -t ~
+stow  -d "$dir"  -t ~  home
 
 # MODULE (CONFIG) DOTFILES
 mkdir -p ~/.config
-stow ghostty  -t ~
-stow lazygit  -t ~
-stow nvim     -t ~
-stow tmux     -t ~
+stow  -d "$dir"  -t ~  ghostty
+stow  -d "$dir"  -t ~  lazygit
+stow  -d "$dir"  -t ~  nvim
+stow  -d "$dir"  -t ~  tmux
 
