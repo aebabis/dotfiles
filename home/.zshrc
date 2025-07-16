@@ -43,5 +43,7 @@ source ~/.zaliases                  # Load aliases
 source ~/.zpath       2> /dev/null  # Update $PATH
 source ~/.zlocal      2> /dev/null  # Optional (unversioned) config
 
+source ~/.shell-functions
+
 # Create and attach tmux main session if it doesn't exist yet
 ~/.config/tmux/create-main.zsh
