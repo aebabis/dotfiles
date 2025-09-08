@@ -1,4 +1,5 @@
-theme = "deep"
+theme = "light:modus,dark:deep"
+# theme = "deep"
 # theme = "duckbones"
 # theme = "Everblush"
 # theme = "farmhouse-dark"
