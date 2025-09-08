@@ -1,5 +1,29 @@
 #!/bin/sh
 
+function os() {
+  unameOut="$(uname -s)"
+  case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    MSYS_NT*)   machine=MSys;;
+    *)          machine=Other;;
+  esac
+  echo ${machine}
+}
+
 function killport() {
   lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+}
+
+function is_dark_mode() {
+  os=$(os)
+  if (test $os = "Mac"); then
+    macos_is_dark;
+  fi
+}
+
+function macos_is_dark() {
+  test "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = "Dark"
 }
