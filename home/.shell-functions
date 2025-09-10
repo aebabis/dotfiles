@@ -17,13 +17,18 @@ function killport() {
   lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
 }
 
-function is_dark_mode() {
-  os=$(os)
-  if (test $os = "Mac"); then
-    macos_is_dark;
+function os_appearance() {
+  if (test $(os) = "Mac"); then
+    macos_appearance;
+  else
+    echo "dark"
   fi
 }
 
-function macos_is_dark() {
-  test "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = "Dark"
+function macos_appearance() {
+  if (test "$(defaults read -g AppleInterfaceStyle 2>&1)" = "Dark"); then
+    echo "dark";
+  else 
+    echo "light";
+  fi
 }
