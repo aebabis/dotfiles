@@ -1,5 +1,6 @@
-# Import appearance-detection functions
-source ~/.shell-functions
+#!/bin/zsh
+
+. ~/.shell-functions
 
 if [[ "$(os_appearance)" == "dark" ]]
 then
