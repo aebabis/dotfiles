@@ -18,10 +18,21 @@ function killport() {
 }
 
 function os_appearance() {
-  if (test $(os) = "Mac"); then
+  os=$(os)
+  if (test $os = "Mac"); then
     macos_appearance;
+  elif (test $os = "Linux"); then
+    linux_appearance;
   else
     echo "dark"
+  fi
+}
+
+function linux_appearance() {
+  if [[ "$(gsettings get org.cinnamon.theme name)" =~ "[Dd]ark" ]]; then
+    echo "dark";
+  else
+    echo "light";
   fi
 }
 
