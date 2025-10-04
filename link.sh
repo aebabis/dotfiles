@@ -11,3 +11,7 @@ stow  -d "$dir"  -t ~  lazygit
 stow  -d "$dir"  -t ~  nvim
 stow  -d "$dir"  -t ~  tmux
 
+# LOCAL (CONFIG) DOTFILES
+mkdir -p ~/.local
+stow  -d "$dir"  -t ~  bin
+
