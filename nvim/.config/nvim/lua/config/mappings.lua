@@ -24,3 +24,13 @@ end
 -- Quick terminal
 vim.keymap.set('n', '<leader>T', open_split_terminal, {desc='Open terminal'})
 vim.api.nvim_create_autocmd({ 'TermOpen', 'WinEnter' }, { pattern = 'term://*', command = 'startinsert' })
+
+
+-- Correct priority for dockerfiles that end in an existing extension
+-- this allows `dockerfile.<commonExt> to resolve as a dockerfile for syntax highlighting
+vim.filetype.add({
+  pattern = {
+    ['Dockerfile%..*'] = { 'dockerfile', { priority = math.huge } }
+  }
+})
+
