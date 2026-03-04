@@ -1,4 +1,4 @@
-#/!bin/sh
+#!/bin/sh
 dir=$(dirname "$0")
 
 # ROOT (HOME) DOTFILES
