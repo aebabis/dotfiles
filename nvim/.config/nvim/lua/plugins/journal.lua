@@ -15,7 +15,8 @@ return {
       return template
     end
     vim.keymap.set('n', '<leader>jw', function() vim.cmd(':Journal week') end, {desc='Open weekly journal'})
-    vim.keymap.set('n', '<leader>jd', function() vim.cmd(':Journal week') end, {desc='Open daily journal'})
+    vim.keymap.set('n', '<leader>jd', function() vim.cmd(':Journal day') end, {desc='Open daily journal'})
+    vim.keymap.set('n', '<leader>jy', function() vim.cmd(':Journal year') end, {desc='Open daily journal'})
     vim.keymap.set('n', '<leader>j1', function() vim.cmd(':Journal week -1') end, {desc='Journal 1 week ago'})
     vim.keymap.set('n', '<leader>j2', function() vim.cmd(':Journal week -2') end, {desc='Journal 2 week ago'})
     vim.keymap.set('n', '<leader>j3', function() vim.cmd(':Journal week -3') end, {desc='Journal 3 week ago'})
