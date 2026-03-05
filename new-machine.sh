@@ -11,6 +11,8 @@ apps="stow fzf tealdeer"
 
 if command -v brew 2>&1 >/dev/null; then
   brew install $apps go $rude
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  source $HOME/.cargo/env
   cargo install --locked tree-sitter-cli
 elif command -v apt 2>&1 >/dev/null; then
   sudo apt install $apps golang-go tree-sitter-cli
