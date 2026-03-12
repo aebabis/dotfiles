@@ -43,3 +43,13 @@ function macos_appearance() {
     echo "light";
   fi
 }
+
+# Simple MOV to GIF conversion
+# Usage: ./mov2gif.sh input.mov [output.gif]
+function mov2gif() {
+  INPUT="${1:-./test.mov}"
+  OUTPUT="${2:-${INPUT%.mov}.gif}"
+  # Two-pass method for better quality (generates optimized palette)
+  ffmpeg -i "$INPUT" -vf "fps=15,scale=640:-1:flags=lanczos,palettegen" -y /tmp/palette.png
+  ffmpeg -i "$INPUT" -i /tmp/palette.png -lavfi "fps=15,scale=640:-1:flags=lanczos [x]; [x][1:v] paletteuse" -y "$OUTPUT"
+}
