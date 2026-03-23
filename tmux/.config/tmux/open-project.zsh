@@ -1,32 +1,41 @@
 #!/bin/zsh
-# Usage: ./open-project.zsh [-c command1] [-c command2] [-n name] <dir>
+# Usage: ./open-project.zsh [-w] [-c command1] [-c command2] [-n name] <dir>
+#   -w  configure the current window instead of creating a new one
 
 main() {
   local session=$(tmux display-message -p "#S")
 
   # parse options
-  local -a c_vals n_vals
-  zparseopts -D -E -- c+:=c_vals n:=n_vals
+  local -a c_vals n_vals w_flag
+  zparseopts -D -E -- c+:=c_vals n:=n_vals w=w_flag
   local -a commands=(${c_vals:#-c})  # c_vals is (-c val -c val ...), strip the flag entries
   local name="${n_vals[2]}"
   local dir="$1"
+  local use_current=$(( ${#w_flag} > 0 ))
 
-  # determine window name using either flag or folder name of path
+  # determine window name using either flag or current window name
   local window
   if [[ -n "$name" ]]; then
     window="$name"
+  elif (( use_current )); then
+    window=$(tmux display-message -p "#{window_name}")
   else
     window=$(basename "$dir")
   fi
 
-  # abort if window name already exists in this session
-  if tmux list-windows -t "$session" -F "#{window_name}" | grep -qx "$window"; then
-    echo "open-project: window '$window' already exists in session '$session'" >&2
-    return 1
-  fi
+  if (( use_current )); then
+    # rename the current window
+    tmux rename-window "$window"
+  else
+    # abort if window name already exists in this session
+    if tmux list-windows -t "$session" -F "#{window_name}" | grep -qx "$window"; then
+      echo "open-project: window '$window' already exists in session '$session'" >&2
+      return 1
+    fi
 
-  # create new window
-  tmux new-window -n "$window" -c "$dir"
+    # create new window
+    tmux new-window -n "$window" -c "$dir"
+  fi
 
   # split into top (80%) and bottom (20%) pane, track bottom pane id
   local bottom_pane=$(tmux split-window -t "$session:$window" -v -p 20 -c "$dir" -P -F "#{pane_id}")

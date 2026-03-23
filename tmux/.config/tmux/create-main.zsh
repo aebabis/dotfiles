@@ -9,14 +9,10 @@ then
   tmux new-session -d -s $session
 
   # window 0 is the meta window, for writing dotfiles
-  tmux rename-window -t 0 '自然'
-  tmux send-keys -t '自然' 'nvim ~/Projects/dotfiles' C-m
-  tmux split-window -t '自然' -v -p 20 -c "$HOME/$projects/dotfiles" -d
+  tmux run-shell -t "$session" "$(dirname "$0")/open-project.zsh -w -n '自然' '$HOME/$projects/dotfiles'"
 
   # window 1 is for current project or primary focus
-  tmux new-window -t $session:1 -n 'project'
-  tmux send-keys -t 'project' "cd $projects" C-m C-l
-  tmux split-window -t 'project' -v -p 20 -c "$HOME/$projects" -d
+  tmux run-shell -t "$session" "$(dirname "$0")/open-project.zsh -n 'project' '$HOME/$projects'"
 
   # window 2 is support window for window 1 (e.g. dev server, scrumboard)
   tmux new-window -t $session:2 -n 'project-aux'
