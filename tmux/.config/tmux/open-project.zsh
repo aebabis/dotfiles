@@ -1,12 +1,55 @@
 #!/bin/zsh
+# Usage: ./open-project.zsh [-c command1] [-c command2] [-n name] <dir>
 
-session=main
-session_exists=$(tmux list-sessions | grep $session)
+main() {
+  local session=$(tmux display-message -p "#S")
 
-# window 1 is for current project or primary focus
-tmux new-window -t $session:1 -n 'project'
-tmux send-keys -t 'project' "cd $projects" C-m C-l
-tmux split-window -t 'project' -v -p 20 -c "$HOME/$projects" -d
+  # parse options
+  local -a c_vals n_vals
+  zparseopts -D -E -- c+:=c_vals n:=n_vals
+  local -a commands=(${c_vals:#-c})  # c_vals is (-c val -c val ...), strip the flag entries
+  local name="${n_vals[2]}"
+  local dir="$1"
 
-# attach
-tmux attach-session -t $session:1
+  # determine window name using either flag or folder name of path
+  local window
+  if [[ -n "$name" ]]; then
+    window="$name"
+  else
+    window=$(basename "$dir")
+  fi
+
+  # abort if window name already exists in this session
+  if tmux list-windows -t "$session" -F "#{window_name}" | grep -qx "$window"; then
+    echo "open-project: window '$window' already exists in session '$session'" >&2
+    return 1
+  fi
+
+  # create new window
+  tmux new-window -n "$window" -c "$dir"
+
+  # split into top (80%) and bottom (20%) pane, track bottom pane id
+  local bottom_pane=$(tmux split-window -t "$session:$window" -v -p 20 -c "$dir" -P -F "#{pane_id}")
+
+  # run nvim in the top pane
+  tmux send-keys -t "$session:$window.0" "nvim ." C-m
+
+  # split bottom pane into horizontal panes, running a command in each one
+  local numcommands=${#commands[@]}
+  if [[ $numcommands -gt 0 ]]; then
+    local remaining=$((numcommands + 1))
+    local cmd new_pane width
+    for cmd in "${commands[@]}"; do
+      width=$((100 / remaining))
+      new_pane=$(tmux split-window -b -t "$bottom_pane" -h -p $width -c "$dir" -P -F "#{pane_id}")
+      tmux send-keys -t "$new_pane" "$cmd" C-m
+      (( remaining-- ))
+    done
+  fi
+
+  # switch to new window and focus last pane
+  tmux select-window -t "$session:$window"
+  tmux select-pane -t "$session:$window.{last}"
+}
+
+main "$@"
