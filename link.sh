@@ -6,6 +6,7 @@ stow  -d "$dir"  -t ~  home
 
 # MODULE (CONFIG) DOTFILES
 mkdir -p ~/.config
+stow  -d "$dir"  -t ~  claude
 stow  -d "$dir"  -t ~  ghostty
 stow  -d "$dir"  -t ~  lazygit
 stow  -d "$dir"  -t ~  nvim

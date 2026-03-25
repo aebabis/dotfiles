@@ -57,3 +57,9 @@ function mov2gif() {
 function twin() {
   ~/.config/tmux/open-project.zsh "$@"
 }
+
+function claude() {
+  trap '~/.config/tmux/mark-win.zsh ' INT
+  command claude "$@"
+  trap - INT
+}

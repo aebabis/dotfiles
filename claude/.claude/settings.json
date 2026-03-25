@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh '#665544'"
+      }]
+    }],
+    "PermissionRequest": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh '#ff8855'"
+      }]
+    }],
+    "Elicitation": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh '#ff8855'"
+      }]
+    }],
+    "PostToolUse": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh '#665544'"
+      }]
+    }],
+    "Stop": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh '#ff8855'"
+      }]
+    }],
+    "SessionEnd": [{
+      "hooks": [{
+        "type": "command",
+        "command": "~/.config/tmux/mark-win.zsh"
+      }]
+    }]
+  }
+}
