@@ -23,9 +23,8 @@ return {
       -- if there is a language server active in the file
       vim.api.nvim_create_autocmd('LspAttach', {
         desc = 'LSP actions',
-        ---@diagnostic disable-next-line: unused-local
-        callback = function(client, buf)
-          local opts = { buffer = buf, remap = false }
+        callback = function(event)
+          local opts = { buffer = event.buf, remap = false }
 
           vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
           vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)

@@ -4,7 +4,7 @@ session=main
 
 if ! tmux has-session -t "$session" 2>/dev/null
 then
-  projects=$(ls ~ | egrep '^.rojects$' | head -1)
+  projects=$(ls ~ | egrep '^[Pp]rojects$' | head -1)
   tmux new-session -d -s $session
 
   # window 0 is the meta window, for writing dotfiles
@@ -15,7 +15,7 @@ then
 
   # window 2 is support window for window 1 (e.g. dev server, scrumboard)
   tmux new-window -t $session:2 -n 'project-aux'
-  tmux send-keys -t 'project-aux' "cd $projects" C-m C-l
+  tmux send-keys -t 'project-aux' "cd $HOME/$projects" C-m C-l
   tmux split-window -t 'project-aux' -h -c "$HOME/$projects" -d
 
   # create a 3rd window without naming it

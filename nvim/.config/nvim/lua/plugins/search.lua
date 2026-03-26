@@ -47,9 +47,9 @@ return {
       vim.keymap.set('n', '<leader>sbl', fzf.blines)
       vim.keymap.set('n', '<leader>sl', fzf.lines)
       -- tokens from treesitter
-      vim.keymap.set('n', '<leader>st', fzf.treesitter)
+      vim.keymap.set('n', '<leader>sc', fzf.treesitter)
       -- documentation
-      vim.keymap.set('n', '<leader>sh', fzf.helptags)
+      vim.keymap.set('n', '<leader>s?', fzf.helptags)
       vim.keymap.set('n', '<leader>sm', fzf.manpages)
       -- theme selector
       vim.keymap.set('n', '<leader>st', fzf.colorschemes)

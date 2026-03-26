@@ -13,7 +13,7 @@ function left-width () {
 
 function right-width () {
   format=$(tmux show-options -g | grep "^status-right" | head -1)
-  format=${format:14:-2}
+  format=$(echo "$format" | sed 's/^status-right[[:space:]]*"\(.*\)"[[:space:]]*$/\1/')
   formatWithoutStyle=$(echo $format | awk -F: '{gsub(/#[\[][^]]*[\]]/, ""); print}')
   formatWithoutStyle=$(echo $formatWithoutStyle | awk -F: '{gsub(/#\(/, "\$("); print}')
   formatWithoutStyle=$(eval "echo \"$formatWithoutStyle\"")
@@ -24,10 +24,10 @@ function right-width () {
 function center-text () {
   maxlength=$1
   git=$(
-    git rev-parse --abbrev-ref --symbolic-full-name @{u} ||
-    git rev-parse --abbrev-ref HEAD
+    git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null ||
+    git rev-parse --abbrev-ref HEAD 2>/dev/null
   )
-  if [[ $status -eq 0 ]]; then
+  if [[ $? -eq 0 ]]; then
     text=" $git"
   fi
   length=$(echo $text | wc -m)
