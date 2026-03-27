@@ -10,16 +10,16 @@ then
   # window 0 is the meta window, for writing dotfiles
   tmux run-shell -t "$session" "$(dirname "$0")/open-project.zsh -w -n '自然' '$HOME/$projects/dotfiles'"
 
-  # window 1 is for current project or primary focus
-  tmux run-shell -t "$session" "$(dirname "$0")/open-project.zsh -n 'project' '$HOME/$projects' -c 'clear; echo \"Press Ctrl+] to set NvimTree root\"'"
-
-  # window 2 is support window for window 1 (e.g. dev server, scrumboard)
-  tmux new-window -t $session:2 -n 'project-aux'
-  tmux send-keys -t 'project-aux' "cd $HOME/$projects" C-m C-l
-  tmux split-window -t 'project-aux' -h -c "$HOME/$projects" -d
-
-  # create a 3rd window without naming it
-  tmux new-window -c ~ -t $session:3
+  # window 1 is for dashboard
+  tmux new-window -c "$HOME" -t $session:1 -n 'dashboard'
+  tmux split-window -t 'dashboard' -v -p 20 -c "$HOME"
+  tmux send-keys -t 'dashboard' "yazi" C-m
+  tmux split-window -t 'dashboard' -h -p 66 -c "$HOME"
+  tmux send-keys -t 'dashboard' "clear; echo \"\033[33mtwin <path>\033[0m to open project in new window\"" C-m
+  tmux select-pane -U
+  tmux send-keys -t 'dashboard' "nvim \"$HOME/Notes.md\"" C-m
+  tmux split-window -t 'dashboard' -h -p 66 -c "$HOME"
+  tmux send-keys -t 'dashboard' "lazydocker" C-m
 
   # attach
   tmux attach-session -t $session:1
