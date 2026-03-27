@@ -25,4 +25,8 @@ fi
 # Plugin and repo dependencies
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Yazi flavors
+mkdir -p ~/.config/yazi/
+git clone https://github.com/yazi-rs/flavors ~/.config/yazi/flavors
+
 ./link.sh

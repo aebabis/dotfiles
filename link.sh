@@ -11,6 +11,7 @@ stow  -d "$dir"  -t ~  ghostty
 stow  -d "$dir"  -t ~  lazygit
 stow  -d "$dir"  -t ~  nvim
 stow  -d "$dir"  -t ~  tmux
+stow  -d "$dir"  -t ~  yazi
 
 # LOCAL (CONFIG) DOTFILES
 mkdir -p ~/.local
