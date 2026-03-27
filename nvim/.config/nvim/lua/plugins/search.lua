@@ -36,27 +36,19 @@ return {
       require('fzf-lua').setup(getConfig())
       local fzf = require('fzf-lua')
 
-      vim.keymap.set('n', '<leader>ss', fzf.grep) -- search
-      -- Live grep whole project
-      vim.keymap.set('n', '<leader>sg', fzf.live_grep)
-      vim.keymap.set('n', '<leader>sgr', fzf.live_grep_resume)
-      -- filenames
-      vim.keymap.set('n', '<leader>sf', fzf.files)
-      vim.keymap.set('n', '<leader>sb', fzf.buffers)
-      -- lines in buffer(s)
-      vim.keymap.set('n', '<leader>sbl', fzf.blines)
-      vim.keymap.set('n', '<leader>sl', fzf.lines)
-      -- tokens from treesitter
-      vim.keymap.set('n', '<leader>sc', fzf.treesitter)
-      -- documentation
-      vim.keymap.set('n', '<leader>s?', fzf.helptags)
-      vim.keymap.set('n', '<leader>sm', fzf.manpages)
-      -- theme selector
-      vim.keymap.set('n', '<leader>st', fzf.colorschemes)
-      -- look at keymaps
-      vim.keymap.set('n', '<leader>sk', fzf.keymaps)
-      -- history of search
-      vim.keymap.set('n', '<leader>sh', fzf.search_history)
+      vim.keymap.set('n', '<leader>ss',  fzf.grep,              { desc = 'Grep' })
+      vim.keymap.set('n', '<leader>sg',  fzf.live_grep,         { desc = 'Live grep' })
+      vim.keymap.set('n', '<leader>sgr', fzf.live_grep_resume,  { desc = 'Resume live grep' })
+      vim.keymap.set('n', '<leader>sf',  fzf.files,             { desc = 'Files' })
+      vim.keymap.set('n', '<leader>sb',  fzf.buffers,           { desc = 'Buffers' })
+      vim.keymap.set('n', '<leader>sbl', fzf.blines,            { desc = 'Buffer lines' })
+      vim.keymap.set('n', '<leader>sl',  fzf.lines,             { desc = 'Lines' })
+      vim.keymap.set('n', '<leader>sc',  fzf.treesitter,        { desc = 'Treesitter tokens' })
+      vim.keymap.set('n', '<leader>s?',  fzf.helptags,          { desc = 'Help tags' })
+      vim.keymap.set('n', '<leader>sm',  fzf.manpages,          { desc = 'Man pages' })
+      vim.keymap.set('n', '<leader>st',  fzf.colorschemes,      { desc = 'Colorschemes' })
+      vim.keymap.set('n', '<leader>sk',  fzf.keymaps,           { desc = 'Keymaps' })
+      vim.keymap.set('n', '<leader>sh',  fzf.search_history,    { desc = 'Search history' })
     end
   }
 }
