@@ -16,6 +16,8 @@ set noequalalways  " prevent auto-resizing of splits
 
 set autoread    " auto-reload externally modified files
 
+set fillchars+=diff:.
+
 " KEYMAPPINGS
 " Swap e and y for scrolling
 nnoremap <C-y>  <C-e>
