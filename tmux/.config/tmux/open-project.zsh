@@ -24,9 +24,11 @@ main() {
     window=$(basename "$dir")
   fi
 
+  local window_id
   if (( use_current )); then
     # rename the current window
     tmux rename-window "$window"
+    window_id=$(tmux display-message -p "#{window_id}")
   else
     # abort if window name already exists in this session
     if tmux list-windows -t "$session" -F "#{window_name}" | grep -qx "$window"; then
@@ -34,16 +36,16 @@ main() {
       return 1
     fi
 
-    # create new window
-    tmux new-window -n "$window" -c "$dir"
+    # create new window, capture its ID to avoid issues with special chars in name
+    window_id=$(tmux new-window -n "$window" -c "$dir" -P -F "#{window_id}")
   fi
 
   # split into top (80%) and bottom (20%) pane, track bottom pane id
-  local bottom_pane=$(tmux split-window -t "$session:$window" -v -p 20 -c "$dir" -P -F "#{pane_id}")
+  local bottom_pane=$(tmux split-window -t "$window_id" -v -p 20 -c "$dir" -P -F "#{pane_id}")
 
   # run nvim in the top pane
-  tmux send-keys -t "$session:$window.0" "cd '$dir'" C-m
-  tmux send-keys -t "$session:$window.0" "nvim ." C-m
+  tmux send-keys -t "$window_id.0" "cd '$dir'" C-m
+  tmux send-keys -t "$window_id.0" "nvim ." C-m
 
   # split bottom pane into horizontal panes, running a command in each one
   local numcommands=${#commands[@]}
@@ -59,8 +61,8 @@ main() {
   fi
 
   # switch to new window and focus last pane
-  tmux select-window -t "$session:$window"
-  tmux select-pane -t "$session:$window.{last}"
+  tmux select-window -t "$window_id"
+  tmux select-pane -t "$window_id.{last}"
 }
 
 main "$@"
