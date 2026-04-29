@@ -3,6 +3,7 @@ local getConfig = function()
   local config = {
     'fzf-vim',
     grep = {
+      hidden = true,
       actions = {
         -- this action toggles between 'grep' and 'live_grep'
         ["ctrl-g"] = { actions.grep_lgrep },
@@ -19,9 +20,6 @@ local getConfig = function()
       end,
     },
   }
-  if vim.fn.executable('fd') ~= 1 then
-    config.files = { cmd = 'find -f .' }
-  end
   return config
 end
 
