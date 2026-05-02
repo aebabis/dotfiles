@@ -11,7 +11,7 @@ main() {
   local session="${s_vals[2]:-$(tmux display-message -p "#S")}"
   local -a commands=(${c_vals:#-c})  # c_vals is (-c val -c val ...), strip the flag entries
   local name="${n_vals[2]}"
-  local dir="$1"
+  local dir=$(cd "$1"; pwd)
   local use_current=$(( ${#w_flag} > 0 ))
 
   # determine window name using either flag or current window name
