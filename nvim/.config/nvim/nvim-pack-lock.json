@@ -32,14 +32,6 @@
       "rev": "86ed124c2f7e118670649701288e024444bf91e5",
       "src": "https://github.com/oxfist/night-owl.nvim"
     },
-    "nightfox.nvim": {
-      "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
-      "src": "https://github.com/edeneast/nightfox.nvim"
-    },
-    "nord.nvim": {
-      "rev": "80c1e5321505aeb22b7a9f23eb82f1e193c12470",
-      "src": "https://github.com/shaunsingh/nord.nvim"
-    },
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "http://github.com/nvim-treesitter/nvim-treesitter"
