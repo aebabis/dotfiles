@@ -3,6 +3,7 @@ vim.cmd('source ~/.vimrc');
 -- vim.pack plugins
 require('plugin.autocomplete');
 require('plugin.autosave');
+require('plugin.colorschemes');
 require('plugin.journal');
 require('plugin.treesitter');
 
