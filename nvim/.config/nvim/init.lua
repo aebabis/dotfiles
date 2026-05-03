@@ -1,9 +1,13 @@
+-- lazy.nvim calls vim.loader.enable(); suppress it to avoid ENAMETOOLONG
+-- on vim.pack's deep cache paths (site/pack/core/opt/...). Remove once lazy is gone.
+vim.loader.enable = function() end
 vim.cmd('source ~/.vimrc');
 
 -- vim.pack plugins
 require('plugin.autocomplete');
 require('plugin.autosave');
 require('plugin.colorschemes');
+require('plugin.git-diff');
 require('plugin.journal');
 require('plugin.treesitter');
 
