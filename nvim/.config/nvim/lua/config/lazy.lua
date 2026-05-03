@@ -21,9 +21,12 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "tokyonight", "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  -- preserve rtp paths added by vim.pack.add()/packadd before lazy runs
+  performance = {
+    rtp = { reset = false },
+  },
 })
