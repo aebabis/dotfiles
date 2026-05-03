@@ -10,6 +10,7 @@ require('plugin.colorschemes');
 require('plugin.filetree');
 require('plugin.git-diff');
 require('plugin.journal');
+require('plugin.lsp');
 require('plugin.search');
 require('plugin.treesitter');
 
