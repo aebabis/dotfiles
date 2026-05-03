@@ -7,6 +7,7 @@ vim.cmd('source ~/.vimrc');
 require('plugin.autocomplete');
 require('plugin.autosave');
 require('plugin.colorschemes');
+require('plugin.filetree');
 require('plugin.git-diff');
 require('plugin.journal');
 require('plugin.treesitter');
