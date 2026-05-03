@@ -13,6 +13,7 @@ require('plugin.git-diff');
 require('plugin.git-staging');
 require('plugin.journal');
 require('plugin.lsp');
+require('plugin.notifications');
 require('plugin.search');
 require('plugin.treesitter');
 require('plugin.which-key');
