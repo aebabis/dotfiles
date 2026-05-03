@@ -22,7 +22,7 @@
     },
     "fzf-lua": {
       "rev": "10c19a5f08bfeed34b930a1efddda3a9a983e6e2",
-      "src": "http://github.com/ibhagwan/fzf-lua"
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "fzf.vim": {
       "rev": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263",
@@ -78,7 +78,7 @@
     },
     "quickfixdd": {
       "rev": "cc1adb7e7e9f4827cd655f6b1c05fadedaa87f45",
-      "src": "http://github.com/TamaMcGlinn/quickfixdd"
+      "src": "https://github.com/TamaMcGlinn/quickfixdd"
     },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
