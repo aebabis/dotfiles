@@ -4,6 +4,7 @@ vim.cmd('source ~/.vimrc');
 require('plugin.autocomplete');
 require('plugin.autosave');
 require('plugin.journal');
+require('plugin.treesitter');
 
 require('config.lazy')
 require('config.mappings')

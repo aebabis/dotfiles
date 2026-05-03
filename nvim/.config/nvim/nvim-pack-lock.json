@@ -4,9 +4,61 @@
       "rev": "9aabcb8396224dcbf8d51c0c1d620d88a46e89d7",
       "src": "https://github.com/okuuva/auto-save.nvim"
     },
+    "flow.nvim": {
+      "rev": "4863b14263a77f8efb79068f7078b6261c9cbda2",
+      "src": "https://github.com/0xstepit/flow.nvim"
+    },
+    "fzf": {
+      "rev": "b4a86a9c8a688159131a27b6ec9dbce72ec11573",
+      "src": "https://github.com/junegunn/fzf"
+    },
+    "fzf-lua": {
+      "rev": "10c19a5f08bfeed34b930a1efddda3a9a983e6e2",
+      "src": "http://github.com/ibhagwan/fzf-lua"
+    },
+    "fzf.vim": {
+      "rev": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263",
+      "src": "https://github.com/junegunn/fzf.vim"
+    },
     "journal.nvim": {
       "rev": "006d9900cad5c378ed4b4cb89eb8696fb2383042",
       "src": "https://github.com/jakobkhansen/journal.nvim"
+    },
+    "modus-themes.nvim": {
+      "rev": "17a64464c27c1be605adca13dbe48f2f402fe107",
+      "src": "https://github.com/miikanissi/modus-themes.nvim"
+    },
+    "night-owl.nvim": {
+      "rev": "86ed124c2f7e118670649701288e024444bf91e5",
+      "src": "https://github.com/oxfist/night-owl.nvim"
+    },
+    "nightfox.nvim": {
+      "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
+      "src": "https://github.com/edeneast/nightfox.nvim"
+    },
+    "nord.nvim": {
+      "rev": "80c1e5321505aeb22b7a9f23eb82f1e193c12470",
+      "src": "https://github.com/shaunsingh/nord.nvim"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "http://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "quickfixdd": {
+      "rev": "cc1adb7e7e9f4827cd655f6b1c05fadedaa87f45",
+      "src": "http://github.com/TamaMcGlinn/quickfixdd"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "vague.nvim": {
+      "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",
+      "src": "https://github.com/vague2k/vague.nvim"
     }
   }
 }
