@@ -4,19 +4,19 @@ vim.loader.enable = function() end
 vim.cmd('source ~/.vimrc');
 
 -- vim.pack plugins
-require('plugin.autocomplete');
-require('plugin.autosave');
-require('plugin.colorschemes');
-require('plugin.filetree');
-require('plugin.git');
-require('plugin.git-diff');
-require('plugin.git-staging');
-require('plugin.journal');
-require('plugin.lsp');
-require('plugin.notifications');
-require('plugin.search');
-require('plugin.treesitter');
-require('plugin.which-key');
+require('plugins.autocomplete');
+require('plugins.autosave');
+require('plugins.colorschemes');
+require('plugins.filetree');
+require('plugins.git');
+require('plugins.git-diff');
+require('plugins.git-staging');
+require('plugins.journal');
+require('plugins.lsp');
+require('plugins.notifications');
+require('plugins.search');
+require('plugins.treesitter');
+require('plugins.which-key');
 
 -- Correct priority for dockerfiles that end in an existing extension
 -- this allows `dockerfile.<commonExt> to resolve as a dockerfile for syntax highlighting
