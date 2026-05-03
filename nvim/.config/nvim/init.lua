@@ -8,6 +8,7 @@ require('plugin.autocomplete');
 require('plugin.autosave');
 require('plugin.colorschemes');
 require('plugin.filetree');
+require('plugin.git');
 require('plugin.git-diff');
 require('plugin.git-staging');
 require('plugin.journal');
