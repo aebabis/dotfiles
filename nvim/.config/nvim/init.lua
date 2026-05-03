@@ -13,6 +13,7 @@ require('plugin.journal');
 require('plugin.lsp');
 require('plugin.search');
 require('plugin.treesitter');
+require('plugin.which-key');
 
 require('config.lazy')
 -- Correct priority for dockerfiles that end in an existing extension
