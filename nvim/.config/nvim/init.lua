@@ -9,6 +9,7 @@ require('plugin.autosave');
 require('plugin.colorschemes');
 require('plugin.filetree');
 require('plugin.git-diff');
+require('plugin.git-staging');
 require('plugin.journal');
 require('plugin.lsp');
 require('plugin.search');
