@@ -18,7 +18,6 @@ require('plugin.search');
 require('plugin.treesitter');
 require('plugin.which-key');
 
-require('config.lazy')
 -- Correct priority for dockerfiles that end in an existing extension
 -- this allows `dockerfile.<commonExt> to resolve as a dockerfile for syntax highlighting
 vim.filetype.add({
