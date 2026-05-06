@@ -3,16 +3,24 @@ vim.pack.add({
 	{ src = 'https://github.com/mason-org/mason.nvim' },
 	{ src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
 	{ src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
+	{ src = 'https://github.com/nvim-lua/plenary.nvim' },
+	{ src = 'https://github.com/pmizio/typescript-tools.nvim' },
 })
 
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({
+	automatic_enable = {
+		exclude = { 'ts_ls' },
+	},
+})
 require('mason-tool-installer').setup({
 	ensure_installed = {
 		'lua_ls',
 		'stylua',
 	},
 })
+
+require('typescript-tools').setup({})
 
 vim.lsp.config('lua_ls', {
 	settings = {
@@ -50,7 +58,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>vrr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>vrn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>vf',
-      function() vim.lsp.buf.format({ filter = function(c) return c.name ~= 'ts_ls' end }) end, opts)
+      function() vim.lsp.buf.format({ filter = function(c) return c.name ~= 'typescript-tools' end }) end, opts)
     vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
   end,
 })
