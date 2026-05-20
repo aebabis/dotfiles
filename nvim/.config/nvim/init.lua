@@ -4,7 +4,6 @@ vim.loader.enable = function() end
 vim.cmd('source ~/.vimrc');
 
 -- vim.pack plugins
-require('plugins.autocomplete');
 require('plugins.autosave');
 require('plugins.colorschemes');
 require('plugins.filetree');
@@ -13,6 +12,7 @@ require('plugins.git-diff');
 require('plugins.git-staging');
 require('plugins.journal');
 require('plugins.lsp');
+require('plugins.autocomplete-blink');
 require('plugins.notifications');
 require('plugins.search');
 require('plugins.treesitter');
