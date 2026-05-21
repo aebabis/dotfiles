@@ -8,6 +8,11 @@ main() {
   local -a c_vals n_vals s_vals w_flag
   zparseopts -D -E -- c+:=c_vals n:=n_vals s:=s_vals w=w_flag
 
+  if [[ ! -d "$1" ]]; then
+    print -u2 "error: '$1' is not a directory."
+    return 1
+  fi
+
   local session="${s_vals[2]:-$(tmux display-message -p "#S")}"
   local -a commands=(${c_vals:#-c})  # c_vals is (-c val -c val ...), strip the flag entries
   local name="${n_vals[2]}"
