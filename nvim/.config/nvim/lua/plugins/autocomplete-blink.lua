@@ -8,6 +8,11 @@ vim.pack.add({
 
 require('luasnip.loaders.from_vscode').lazy_load()
 require('blink.cmp').setup({
+	keymap = {
+		preset = 'default',
+		['<C-j>'] = { 'select_next', 'fallback' },
+		['<C-k>'] = { 'select_prev', 'fallback' },
+	},
 	signature = { enabled = true },
 	completion = {
 		documentation = { auto_show = true, auto_show_delay_ms = 500 },
