@@ -44,16 +44,17 @@ vim.lsp.config('lua_ls', {
 	},
 })
 
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { remap = false })
+vim.keymap.set('n', '<leader>vl', vim.diagnostic.setqflist, { remap = false })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, { remap = false })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, { remap = false })
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = { buffer = event.buf, remap = false }
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>vws', vim.lsp.buf.workspace_symbol, opts)
-    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '<leader>vl', vim.diagnostic.setqflist, opts)
-    vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, opts)
-    vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, opts)
     vim.keymap.set('n', '<leader>vca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', '<leader>vrr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>vrn', vim.lsp.buf.rename, opts)
