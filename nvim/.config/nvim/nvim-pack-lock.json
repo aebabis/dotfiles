@@ -18,7 +18,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "fidget.nvim": {
-      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
+      "rev": "82404b196e73a00b1727a91903beef5ddc319d22",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "flow.nvim": {
@@ -30,15 +30,15 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf": {
-      "rev": "67319aed0bfc732ad194fd0291f11ce260822b5a",
+      "rev": "a50619388d76832a18b4fc0db9d61f8dd5e3b518",
       "src": "https://github.com/junegunn/fzf"
     },
     "fzf-lua": {
-      "rev": "3ff77862f6c62f7b850668435ae43aa026de8758",
+      "rev": "fea9eedc6894c44d44cbb772a5cd11c93b82d7a1",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "fzf.vim": {
-      "rev": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263",
+      "rev": "e5b53de3d3b402d2ef9f74da91c2bb808d0afb34",
       "src": "https://github.com/junegunn/fzf.vim"
     },
     "gitsigns.nvim": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "cbf8d285e1462dd24acf3507817be2bbcb035919",
+      "rev": "16ba83bfc8a25f52bb545134f5bee082b195c460",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "modus-themes.nvim": {
@@ -74,7 +74,7 @@
       "src": "https://github.com/edeneast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "246572944c2a1e2a646c2e7609ff619b0fe74c18",
+      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
@@ -86,7 +86,7 @@
       "src": "http://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "7d8dad2c837fcdf2e65997e68657c1a21c568074",
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
