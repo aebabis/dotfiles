@@ -3,6 +3,8 @@ vim.pack.add({
   branch = 'main'},
 });
 
-require('nvim-treesitter').install({
-  'c', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'heex', 'javascript', 'typescript', 'tsx', 'html'
+require('nvim-treesitter').setup({
+  ensure_installed = {
+    'c', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'heex', 'javascript', 'typescript', 'tsx', 'html'
+  },
 })

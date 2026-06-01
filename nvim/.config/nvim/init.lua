@@ -16,6 +16,7 @@ require('plugins.autocomplete-blink');
 require('plugins.notifications');
 require('plugins.search');
 require('plugins.treesitter');
+require('plugins.trouble');
 require('plugins.which-key');
 
 -- Correct priority for dockerfiles that end in an existing extension
