@@ -5,6 +5,7 @@ vim.cmd('source ~/.vimrc');
 
 -- vim.pack plugins
 require('plugins.autosave');
+require('plugins.bitburner');
 require('plugins.colorschemes');
 require('plugins.filetree');
 require('plugins.git');
