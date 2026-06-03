@@ -18,17 +18,21 @@ function right-width () {
   formatWithoutStyle=$(echo $formatWithoutStyle | awk -F: '{gsub(/#\(/, "\$("); print}')
   formatWithoutStyle=$(eval "echo \"$formatWithoutStyle\"")
   rightText=$(tmux display -p "$formatWithoutStyle")
-  echo $rightText | wc -m 
+  echo $rightText | wc -m
 }
 
 function center-text () {
   maxlength=$1
+  if command -v gitmux &>/dev/null; then
+    echo $(gitmux -cfg ~/.config/tmux/gitmux.conf)
+    return
+  fi
   git=$(
     git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null ||
     git rev-parse --abbrev-ref HEAD 2>/dev/null
   )
   if [[ $? -eq 0 ]]; then
-    text=" $git"
+    text=" $git"
   fi
   length=$(echo $text | wc -m)
   if [[ $length -gt $maxlength ]]; then
@@ -45,7 +49,7 @@ availableSpace=$(($totalWidth - $leftSize - $rightSize - 1))
 
 if [[ $availableSpace -ge 3 ]]; then
   centerText="$(center-text $availableSpace)"
-  centerSize=$(echo $centerText | wc -m)
+  centerSize=$(nostyle "$centerText" | wc -m)
 
   preferredLocation=$((($totalWidth - $centerSize) / 2))
 
@@ -55,4 +59,3 @@ if [[ $availableSpace -ge 3 ]]; then
     echo "#[align=centre]$(printf "%-${availableSpace}s" " $centerText ")"
   fi
 fi
-
