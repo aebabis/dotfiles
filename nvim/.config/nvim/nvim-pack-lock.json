@@ -8,6 +8,10 @@
       "rev": "9aabcb8396224dcbf8d51c0c1d620d88a46e89d7",
       "src": "https://github.com/okuuva/auto-save.nvim"
     },
+    "bitburner.nvim": {
+      "rev": "63563e037d3e076e3be5d8d5733f16ed7a9326eb",
+      "src": "https://github.com/aebabis/bitburner.nvim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/Saghen/blink.cmp",
@@ -30,15 +34,15 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf": {
-      "rev": "7d647c70c286720c225ebb8ab75896e5dbee6af6",
+      "rev": "838ac7554bdbae2f457f2c4969e1b38f1c28c946",
       "src": "https://github.com/junegunn/fzf"
     },
     "fzf-lua": {
-      "rev": "e3a71496027f2e3c4a60340170c04d66053d5c4c",
+      "rev": "988416cc782dfe28bff3f0da9b8c943b236cd86a",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "fzf.vim": {
-      "rev": "7fd26e36098091b45c59120bc8d0cfacc15cc6c8",
+      "rev": "356608e2ae5d9127e2c964885ea2b21ea7aea9ab",
       "src": "https://github.com/junegunn/fzf.vim"
     },
     "gitsigns.nvim": {
@@ -74,7 +78,7 @@
       "src": "https://github.com/edeneast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
+      "rev": "07dff35e7c95288861200b788ef32d6103f107f0",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
@@ -114,7 +118,7 @@
       "src": "https://github.com/pmizio/typescript-tools.nvim"
     },
     "vague.nvim": {
-      "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",
+      "rev": "f911602f49116b1ebab95a45391e1cfe2dc62c2b",
       "src": "https://github.com/vague2k/vague.nvim"
     },
     "vim-fugitive": {

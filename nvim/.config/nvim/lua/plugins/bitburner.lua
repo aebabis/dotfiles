@@ -1,5 +1,7 @@
-vim.opt.rtp:prepend(vim.fn.expand('~/Projects/nvim-websocket'))
-vim.opt.rtp:prepend(vim.fn.expand('~/Projects/bitburner.nvim'))
+vim.pack.add({
+  'https://github.com/aebabis/nvim-websocket',
+  'https://github.com/aebabis/bitburner.nvim'
+})
 
 local bitburner = require('bitburner')
 bitburner.setup({
