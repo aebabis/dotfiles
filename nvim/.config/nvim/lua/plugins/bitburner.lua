@@ -16,4 +16,5 @@ bitburner.setup({
 })
 vim.o.statusline = " %f %{%v:lua.require('bitburner').ram_statusline()%} %=%{v:lua.require('bitburner').statusline()} %l:%c "
 
+vim.keymap.set('n', '<leader>bbc', ':BitburnerRun ');
 vim.keymap.set('n', '<leader>bbr', function() bitburner.run('["stop.ts", "home", 1, "start.ts"]') end);
