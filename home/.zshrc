@@ -24,8 +24,8 @@ PROMPT='%F{243}%~%f %f%F{249}%%%f '
 
 # History Autocomplete
 
-if [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
+if command -v fzf >/dev/null; then
+  source <(fzf --zsh)
 else
   setopt SHARE_HISTORY
   HISTFILE=$HOME/.zhistory
